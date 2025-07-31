@@ -1,0 +1,245 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --info-color: #17a2b8;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  min-height: calc(100vh - 56px);
+  width: 200px;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sidebar .nav-link {
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 5px;
+  margin: 2px 10px;
+  transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateX(5px);
+}
+
+.sidebar .nav-link.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.main-content {
+  margin-left: 0;
+  padding: 10px;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.progress {
+  height: 8px;
+  border-radius: 4px;
+}
+
+.activity-feed {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.activity-item {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.activity-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  color: white;
+  font-size: 12px;
+}
+
+.activity-content {
+  flex: 1;
+}
+
+.table th {
+  border-top: none;
+  font-weight: 600;
+  color: #495057;
+}
+
+.badge {
+  font-size: 0.75em;
+  padding: 4px 8px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Role-specific styling */
+.role-admin {
+  border-left: 4px solid #dc3545;
+}
+.role-manager {
+  border-left: 4px solid #007bff;
+}
+.role-designer {
+  border-left: 4px solid #28a745;
+}
+.role-site-manager {
+  border-left: 4px solid #ffc107;
+}
+.role-site-coordinator {
+  border-left: 4px solid #17a2b8;
+}
+.role-site-supervisor {
+  border-left: 4px solid #6f42c1;
+}
+
+/* Status badges */
+.status-active {
+  background-color: #28a745;
+}
+.status-inactive {
+  background-color: #6c757d;
+}
+.status-pending {
+  background-color: #ffc107;
+}
+.status-completed {
+  background-color: #17a2b8;
+}
+.status-cancelled {
+  background-color: #dc3545;
+}
+
+/* Project progress indicators */
+.progress-low {
+  background-color: #dc3545;
+}
+.progress-medium {
+  background-color: #ffc107;
+}
+.progress-high {
+  background-color: #28a745;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Dashboard specific styles */
+.dashboard-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 15px;
+}
+
+.stats-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: scale(1.05);
+}
+
+/* Form styling */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

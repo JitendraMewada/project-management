@@ -1,0 +1,13 @@
+{
+    "name": "phpmailer/phpmailer",
+    "description": "description[]: Project Management System for Interior Designers",
+    "require": {
+        "tecnickcom/tcpdf": "^6.10"
+    },
+    "authors": [
+        {
+            "name": "JitendraMewada",
+            "email": "jitendramewadaa@gmail.com"
+        }
+    ]
+}
